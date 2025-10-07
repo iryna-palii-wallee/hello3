@@ -10,7 +10,7 @@ plugins {
 }
 
 react {
-    autolinkLibrariesWithApp()
+    // autolinkLibrariesWithApp() - removed to avoid circular dependency
 }
 
 repositories {
@@ -26,6 +26,7 @@ android {
 
         buildConfigField("boolean", "IS_NEW_ARCHITECTURE_ENABLED", properties["newArchEnabled"].toString())
         buildConfigField("boolean", "IS_HERMES_ENABLED", properties["hermesEnabled"].toString())
+        buildConfigField("boolean", "IS_EDGE_TO_EDGE_ENABLED", "false")
     }
 
     publishing {

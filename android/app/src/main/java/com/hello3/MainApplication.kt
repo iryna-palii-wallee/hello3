@@ -9,6 +9,7 @@ import com.facebook.react.ReactNativeHost
 import com.facebook.react.ReactPackage
 import com.facebook.react.defaults.DefaultReactHost.getDefaultReactHost
 import com.facebook.react.defaults.DefaultReactNativeHost
+// import com.hello3react.ReactNativeHostManager - temporarily disabled
 
 class MainApplication : Application(), ReactApplication {
 
@@ -18,6 +19,7 @@ class MainApplication : Application(), ReactApplication {
             PackageList(this).packages.apply {
               // Packages that cannot be autolinked yet can be added manually here, for example:
               // add(MyReactNativePackage())
+              add(com.callstack.reactnativebrownfield.ReactNativeBrownfieldPackage())
             }
 
         override fun getJSMainModuleName(): String = "index"
@@ -34,5 +36,6 @@ class MainApplication : Application(), ReactApplication {
   override fun onCreate() {
     super.onCreate()
     loadReactNative(this)
+      // ReactNativeHostManager.initialize(application = this) - temporarily disabled
   }
 }
